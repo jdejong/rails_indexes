@@ -115,10 +115,7 @@ EOM
           @index_migrations[class_name.base_class.table_name] += [[class_name.inheritance_column, class_name.base_class.primary_key].sort] unless @index_migrations[class_name.base_class.table_name].include?([class_name.base_class.inheritance_column].sort)
         rescue Exception => e
           p "Some errors here:"
-          p "Please add info after this string in to https://github.com/warpc/rails_indexes/issues"
           p "Class: #{class_name}"
-          p "Association type: #{reflection_options.macro}"
-          p "Association options: #{reflection_options.options}"
           p e.message
           p e.backtrace.inspect 
         end   
